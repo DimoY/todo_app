@@ -4,7 +4,6 @@ const check_user = require("./modules/check_user.js");
 const save_task = require("./modules/save_task.js");
 const get_task = require("./modules/get_task.js");
 const checked = require("./modules/checked");
-const leaderboard = require("./modules/leaderboard")
 var sqlite3 = require('sqlite3')
 const app = express();
 const port = 8080;
@@ -125,7 +124,7 @@ app.get("/:user_id/task", function (req, res) {
 
 });
 
-app.post("/:user_id/task/completed", function (req, res) {
+app.post("/task/completed", function (req, res) {
   if (req.body["id"] == null) {
     res.json({
       end: false,
@@ -133,7 +132,7 @@ app.post("/:user_id/task/completed", function (req, res) {
     });
     return;
   }
-  checked(db,res,req.body["id"],parseInt(req.params["user_id"],10))
+  checked(db,res,req.body["id"])
 
 });
 
