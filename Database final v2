@@ -33,4 +33,4 @@ CREATE TABLE Tasks (
 
 /* Update */
 
-/*Task*/   UPDATE Tasks set completed = 1 WHERE task_id = Completed true
+/*Task*/   UPDATE Tasks set completed = 1 WHERE task_id = Completed
