@@ -1,0 +1,36 @@
+/* Tables */
+
+CREATE TABLE "User" (
+    User_id INTEGER PRIMARY KEY,
+    Hash TEXT(255) DEFAULT NULL UNIQUE,
+    Tasks INTEGER DEFAULT NULL
+);
+
+CREATE TABLE Tasks (
+    Task_id INTEGER NOT NULL PRIMARY KEY,
+    User_id INTEGER NOT NULL,
+    Task TEXT(1000),
+    Completed BOOLEAN,
+    FOREIGN KEY (User_id) REFERENCES User (User_id)
+);
+
+
+/* Insert */
+
+/*Task*/   INSERT INTO Tasks (User_id, Task, Completed) VALUES (Users id, Task text, 0)
+
+/*User*/   INSERT INTO User (Hash,Tasks) VALUES (Hash text, 0)
+
+
+/*Selectors*/
+
+/*Login*/   SELECT * FROM User WHERE Hash = Hash text
+
+/*Users Tasks*/   SELECT * FROM Tasks WHERE User_id = Users id AND Completed = 0
+
+/*Leaderboard*/   SELECT Hash,Tasks FROM  "User" ORDER BY Tasks DESC limit 10
+
+
+/* Update */
+
+/*Task*/   UPDATE Tasks set completed = 1 WHERE task_id = Completed true
