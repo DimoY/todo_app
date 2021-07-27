@@ -1,14 +1,19 @@
-function get_task(tasks,id) {
-    let user_tasks = []
-    if(tasks===[]){
-        return false
-    }
-    tasks.forEach(e => {
-        if(e["user_id"] == id){
-            user_tasks.push(e)
-        }
-    });
-    return user_tasks
+/**
+ * @brief 
+ *  Get all the tasks of a user
+ * @return function 
+ * returns a response
+ */
+function get_task(db,res,id) {
+    console.log(id)
+    db.all(`SELECT * FROM Tasks WHERE User_id = ? AND Completed = 0`,[id], (err, rows) => {
+        console.log(rows)
+        res.json({
+            end: true,
+            message: "Task listed successfully",
+            tasks: rows,
+          });
+    })
 }
 
 module.exports = get_task

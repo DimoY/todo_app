@@ -3,10 +3,40 @@ const save_user = require("./modules/save_user.js");
 const check_user = require("./modules/check_user.js");
 const save_task = require("./modules/save_task.js");
 const get_task = require("./modules/get_task.js");
-const same_task_check = require("./modules/same_task_check.js");
-const completed = require("./modules/completed");
+const checked = require("./modules/checked");
+var sqlite3 = require('sqlite3')
 const app = express();
 const port = 8080;
+
+
+const db = new sqlite3.Database('./database.db', (err) => {
+  if (err) {
+      console.error("Erro opening database " + err.message);
+  } else {
+
+      db.run('CREATE TABLE User (\
+        User_id int NOT NULL AUTO_INCREMENT,\
+        Hash varchar(255) DEFAULT NULL UNIQUE,\
+        Tasks int DEFAULT NULL,\
+        PRIMARY KEY (`User_id`)\
+      );', (err) => {
+          if (err) {
+              console.log("Table User already exists.");
+          }
+      });
+      db.run('CREATE TABLE Tasks (\
+            Task_id int NOT NULL,\
+            User_id int NOT NULL,\
+            Task varchar(1000),\
+            Completed BIT,\
+            PRIMARY KEY (Task_id),\
+            FOREIGN KEY (User_id) REFERENCES User (User_id));', (err) => {
+        if (err) {
+            console.log("Table Tasks already exists.");
+        }
+    });
+  }
+});
 /**
  * Acount schema
  *
@@ -53,20 +83,8 @@ app.post("/register", function (req, res) {
     });
     return;
   }
-  let exists = check_user(accounts, req.body["hash"]);
-  if (exists !== 0) {
-    res.json({
-      end: false,
-      message: "User already exists",
-    });
-    return;
-  }
-  accounts = save_user(accounts, req.body["hash"]);
-  res.send({
-    end: true,
-    message: "Acount was saved successfully",
-    number: accounts[accounts.length - 1]["id"]+1,
-  });
+  save_user(db, req.body["hash"],res);
+
 });
 
 app.post("/login/", function (req, res) {
@@ -77,20 +95,8 @@ app.post("/login/", function (req, res) {
     });
     return;
   }
-  let exists = check_user(accounts,req.body["hash"]);
-  if (exists == 0) {
-    res.json({
-      end: false,
-      message: "User does not exist",
-    });
-    return;
-  }
+  check_user(db,req.body["hash"],res);
 
-  res.send({
-    end: true,
-    message: "Acount was logged in successfully",
-    number: exists,
-  });
 });
 
 app.post("/:user_id/task", function (req, res) {
@@ -101,13 +107,6 @@ app.post("/:user_id/task", function (req, res) {
     });
     return;
   }
-  if(same_task_check(tasks,req.body["task_hash"])){
-    res.json({
-      end: false,
-      message: "task already exists",
-    });
-    return;
-  }
   if(req.body["task_hash"] === ""){
     res.json({
       end: false,
@@ -115,24 +114,17 @@ app.post("/:user_id/task", function (req, res) {
     });
     return;
   }
-  save_task(tasks, req.body["task_hash"], req.params["user_id"]);
-  res.send({
-    end: true,
-    message: "Task was saved successfully",
-    number: tasks[tasks.length - 1].id,
-  });
+  save_task(db,res, req.body["task_hash"], req.params["user_id"]);
+
 });
 
 app.get("/:user_id/task", function (req, res) {
-  let user_tasks = get_task(tasks, req.params["user_id"]);
-  res.send({
-    end: true,
-    message: "Task listed successfully",
-    tasks: user_tasks,
-  });
+  console.log(parseInt(req.params["user_id"],10))
+  get_task(db,res, parseInt(req.params["user_id"],10));
+
 });
 
-app.post("/:user_id/task/completed", function (req, res) {
+app.post("/task/completed", function (req, res) {
   if (req.body["id"] == null) {
     res.json({
       end: false,
@@ -140,15 +132,14 @@ app.post("/:user_id/task/completed", function (req, res) {
     });
     return;
   }
-  var id = 0
-  tasks.forEach((e,index)=>{
-    if(e.id == req.body["id"]){
-      id = index
-    }
-  })
-  tasks[id].completed = true
-  tasks = completed(tasks,req)
-  res.send({end: true,
-    message: "Task checked successfully"})
+  checked(db,res,req.body["id"])
+
 });
-app.listen(port, () => console.log(`Example app listening on port port!`));
+
+app.get("/leaderboard",function (req,res) {
+  leaderboard(db,res)
+})
+app.listen(port, () => {
+  console.log(`Example app listening on port port!`)
+});
+
