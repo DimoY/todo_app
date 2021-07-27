@@ -28,3 +28,5 @@ TODO app backend
 #### Number = The id of the user(for example save_user.js) or task (for example save_task.js)
  
 #### Text(in save_task.js) = The text of the task
+
+#### Users = list of users for the leaderboard
