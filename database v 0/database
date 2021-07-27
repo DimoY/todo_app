@@ -1,6 +1,0 @@
-CREATE DATABASE test;
-USE test;
-CREATE TABLE to_do(id INT , name VARCHAR (50),password VARCHAR (30), leaderboard INT);
-
-
-SELECT * FROM to_do ORDER BY leaderboard DESC;
