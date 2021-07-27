@@ -16,15 +16,15 @@ TODO app backend
 
 # OUTPUT
 
-## Basic Structure
+### Basic Structure
  
-## END = Was the operation successful
-## Message = Text information
+#### END = Was the operation successful
+#### Message = Text information
 
-## Other:
+### Other:
     
-### Tasks = List of all the tasks
+#### Tasks = List of all the tasks
 
-### Number = The id of the user(for example save_user.js) or task (for example save_task.js)
+#### Number = The id of the user(for example save_user.js) or task (for example save_task.js)
  
-### Text(in save_task.js) = The text of the task
+#### Text(in save_task.js) = The text of the task
