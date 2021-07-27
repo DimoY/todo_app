@@ -4,17 +4,17 @@ TODO app backend
 - - - - 
 # INPUT
 
-      File    |  Input
-------------- | -------------
- check_user.js| Input( Users_hash = Encrypted(Pasword+Username) )
-  checked.js  | Input( Task_id = Id of the task you want to complete) -
-  get_task.js | Input(id = the id of the user you want to get the task from) - return a list of users not completed tasks
-leadeboard.js | Input(None) - returns the Leaderboard
- save_task.js | Input(Hash - text of hash, Id - users id ) - saves a task in the db
- save_user.js | Input( Hash - users Hash = Encrypted(Pasword+Username)   )-Saves a user with 0 tasks completed 
+|      File    |  Input                                                                                                   |
+|--------------|----------------------------------------------------------------------------------------------------------|
+| check_user.js| Input( Users_hash = Encrypted(Pasword+Username) )                                                        |
+|  checked.js  | Input( Task_id = Id of the task you want to complete) -                                                  |
+|  get_task.js | Input(id = the id of the user you want to get the task from) - return a list of users not completed tasks|
+|leadeboard.js | Input(None) - returns the Leaderboard                                                                    |
+| save_task.js | Input(Hash - text of hash, Id - users id ) - saves a task in the db                                      |
+| save_user.js | Input( Hash - users Hash = Encrypted(Pasword+Username)   )-Saves a user with 0 tasks completed           |
 
 
-#OUTPUT
+# OUTPUT
 
 ## Basic Structure
  
