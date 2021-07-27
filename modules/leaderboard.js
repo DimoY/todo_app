@@ -7,6 +7,7 @@
  */
 
 function get_task(db,res) {
+    console.log(id)
     db.all(`SELECT Hash,Tasks FROM  "User" ORDER BY Tasks limit 10`, (err, rows) => {
         if(err){
             res.json({
@@ -18,7 +19,7 @@ function get_task(db,res) {
         res.json({
             end: true,
             message: "Lederboard",
-            users: rows,
+            tasks: rows,
           });
     })
 }
