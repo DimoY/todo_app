@@ -1,4 +1,8 @@
 import { useEffect } from "react";
+/**
+*@brief
+* USe effect to remove a <li> from the todo list
+*/
 export function HomeTodoRemoveHook(TodoListIndexRemove,TodoList,setTodoList,setTodoListIndexRemove) {
     useEffect(() => {
         if(TodoListIndexRemove!==-1){

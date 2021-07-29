@@ -1,4 +1,9 @@
 import { useEffect } from "react";
+/**
+*@brief
+* Gets the tasks from backend and sets todo_list to a list of <li>
+*/
+
 export function GetTodoHook(context,refresh,setTodoList,setTodoListIndexRemove) {
     useEffect(() => {
         console.log(2)
@@ -10,15 +15,9 @@ export function GetTodoHook(context,refresh,setTodoList,setTodoListIndexRemove) 
         
         }).then(async (response)=>{
             var result = await response.json()
-            var crib = result.tasks.filter((i)=>{
-                if(!i.completed){
-                    return 1
-                }
-                return null
-                
-            })
+            var crib = result.tasks
             crib = crib.map((i)=>{
-                return (<li key={i.id} id = {i.id} onClick = {async (e)=>{
+                return (<li key={i.Task_id} id = {i.Task_id} className="task" onClick = {async (e)=>{
                     var responce = await fetch('http://localhost:8080/'+context.id+"/task/completed", {
                         method: 'POST',
                         body:JSON.stringify({"id":e.target.id}),
@@ -28,7 +27,7 @@ export function GetTodoHook(context,refresh,setTodoList,setTodoListIndexRemove) 
                     })
                     console.log(await responce.json())
                     setTodoListIndexRemove(e.target.id)
-                }}>{i.hash}</li>)
+                }}>{i.Task}</li>)
             })
             setTodoList(crib)
             

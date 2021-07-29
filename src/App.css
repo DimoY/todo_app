@@ -45,6 +45,20 @@
   border: 0.1px white solid;
   border-radius:15px 0px 0px 15px;
 }
+
+.Home_log_out{
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 0.6vh;
+  padding-bottom: 0.6vh;
+  font-size: x-large;
+  color: white;
+  background:none;
+  text-decoration: none;
+  border: 0.1px white solid;
+  border-radius:15px 0px 0px 15px;
+}
+
 .Home_sign_up{
   padding-right: 1vh;
   padding-left: 1vh;
@@ -53,12 +67,65 @@
   border: 0.1px white solid;
   border-radius:0px 15px 15px 0px;
 }
+.Home_Refresh{
+  color: white;
+  background: none;
+  text-decoration: none;
+  border: none;
+}
+.Home_settings{
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 0.6vh;
+  padding-bottom: 0.8vh;
+  color: white;
+  font-size: x-large;
+  text-decoration: none;
+  border: 0.1px white solid;
+  border-radius:0px 15px 15px 0px;
+}
+.forms_home{
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 0.6vh;
+  padding-bottom: 0.6vh;
+  font-size: medium;
+  color: white;
+  background:none;
+  text-decoration: none;
+  border: 0.1px white solid;
+  border-radius:15px 0px 0px 15px;
+}
+.forms{
+  padding-left: 1.5vh;
+  padding-right: 1.5vh;
+  padding-top: 0.6vh;
+  padding-bottom: 0.6vh;
+  font-size: medium;
+  color: white;
+  background:none;
+  text-decoration: none;
+  border: 0.1px white solid;
+  border-radius:0px 15px 15px 0px;
+}
 
 .Home_sign_in:hover{
   background:#4199b1;
 }
+.Home_log_out:hover{
+  background:#4199b1;
+}
 .Home_sign_up:hover{
   background:#4199b1;
+}
+.Home_settings:hover{
+  background:#4199b1; 
+}
+.forms:hover{
+  background:#4199b1; 
+}
+.forms_home:hover{
+  background:#4199b1; 
 }
 .title-all{
   font-size:2em;
@@ -87,12 +154,12 @@
   background: none;
   border: white 0.5px solid;
   border-radius: 1vh;
-  padding: 0.5vh 0.5vh 0.5vh 0.5vh;
+  padding: 0.3vh 0.8vh 0.3vh 0.8vh;
   margin-top: 2vh;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 16px;
+  font-size: x-large;
 }
 
 .Log_Reg_submit:hover{
@@ -123,4 +190,13 @@
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
+}
+.tasks{
+  list-style-type:none;
+}
+
+li.task{
+  margin-bottom: 3vh;
+  width: auto;
+  border-bottom: 1px solid #333842;
 }

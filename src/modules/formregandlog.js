@@ -1,10 +1,14 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { useState } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory,Link } from "react-router-dom";
 
 import { SendEncodedDetails } from "./functions/SendEncodedDetails";
 
+/**
+*@brief
+*  reg/log component with validation with yup. Forms are made with formik
+*/
 
 export function FormRegAndLog(params) {
   const [ValidRequests, setValidRequests] = useState(null)
@@ -77,6 +81,8 @@ export function FormRegAndLog(params) {
       <button type="submit" className="Log_Reg_submit">Submit</button>
       <br/>
       {(log_reg && (ValidRequests !== false || "User does not exist")) || (ValidRequests !== false || "User already exists")}
+      <Link to="/" className="forms_home">Home</Link>
+      {(log_reg && <Link to="/register" className="forms">Register</Link>)||<Link to="/login" className="forms">Login</Link>}
     </form>
     </div>
   );

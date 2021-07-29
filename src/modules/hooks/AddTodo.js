@@ -1,21 +1,32 @@
 import { useEffect } from "react";
+/**
+*@brief
+* Todo useEffect hook to add a task to db
+*/
 
-export function AddTodoHook(context,Todoo) {
-    
+export function AddTodoHook(context,Todoo,setTodo,TodoList,setTodoList,setTodoListIndexRemove) {
     useEffect(() => {
-        fetch('http://localhost:8080/'+context.id+"/task", {
+        if(Todoo!==""){
+            fetch('http://localhost:8080/'+context.id+"/task", {
                 method: 'POST',
-            body:JSON.stringify({"task_hash":Todoo}),
-            headers: {
-                'Content-Type': 'application/json;charset=utf-8',
-            }
+                body:JSON.stringify({"task_hash":Todoo}),
+                headers: {
+                    'Content-Type': 'application/json;charset=utf-8',
+                }
 
-        }).then(async (response)=>{
-            var result = await response.json()
-            console.log(result)
-        })
+            }).then(async (response)=>{
+                var result = await response.json()
+                setTodo("")
+                if(result.end !== true){
+                    console.log("unsucsessfull")
+                }else{
+                    console.count()
+                }
+            })
+        }
+        
     return () => {
         return
     }
-}, [context,Todoo])
+}, [context,Todoo,setTodo,TodoList,setTodoList,setTodoListIndexRemove])
 }
