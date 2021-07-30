@@ -2,6 +2,10 @@
 
 ----------------------------------
 
+## How to install the dependancies
+
+`yarn install`
+
 ## How to run the app
 
 `yarn run`
