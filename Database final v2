@@ -1,12 +1,14 @@
 /* Tables */
 
-CREATE TABLE "User" (
+CREATE TABLE "User" 
+(
     User_id INTEGER PRIMARY KEY,
     Hash TEXT(255) DEFAULT NULL UNIQUE,
     Tasks INTEGER DEFAULT NULL
 );
 
-CREATE TABLE Tasks (
+CREATE TABLE Tasks 
+(
     Task_id INTEGER NOT NULL PRIMARY KEY,
     User_id INTEGER NOT NULL,
     Task TEXT(1000),
