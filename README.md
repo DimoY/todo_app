@@ -1,7 +1,7 @@
 # React frontend
 -------------------------------------------------
 
-## How to install the dependancies application
+## How to install the dependancies
 
 `yarn install`
 
