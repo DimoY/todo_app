@@ -1,0 +1,17 @@
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.exe
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.deps.json
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.runtimeconfig.json
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.runtimeconfig.dev.json
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.dll
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\bin\Debug\netcoreapp3.1\Todolist app.pdb
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.csprojAssemblyReference.cache
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist_app.Form1.resources
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist_app.Properties.Resources.resources
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.csproj.GenerateResource.cache
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.AssemblyInfoInputs.cache
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.AssemblyInfo.cs
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.csproj.CoreCompileInputs.cache
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.dll
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.pdb
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist app.genruntimeconfig.cache
+C:\Users\Йордан\source\repos\WinFormsApp1\Todolist app\obj\Debug\netcoreapp3.1\Todolist_app.Login.resources
